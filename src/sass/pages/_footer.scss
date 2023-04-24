@@ -1,0 +1,55 @@
+@use "../shared/variables" as *;
+@use "../utilis/mixins" as *;
+
+footer{
+    background-color: $fc__black;
+    color: $fc__white;
+    font-size: 1.2rem;
+    line-height: 2em;
+    @include flex;
+    flex-wrap: wrap;
+    padding: 2em 2em;
+    align-items: flex-start;
+    
+    .logo{
+        width: 100%;
+        
+    }
+
+        h2{
+            text-transform: uppercase;
+            font-weight: 900;
+            text-decoration: underline;
+            line-height: 3em;
+           
+        }
+    li{
+        list-style-type: none;
+        
+        &:hover{
+            color: $fc__gold;
+            cursor: pointer;
+        }
+        
+    }
+    .footer-connect{
+        display: flex;
+        flex-direction: column;
+
+        a{
+            color: $fc__white;
+            text-decoration: none;
+
+            &:hover{
+                color: $fc__gold;
+            }
+        }
+    }
+}
+
+@media (width<35em) {
+    footer{
+        flex-direction: column;
+        margin: auto;
+    }
+}

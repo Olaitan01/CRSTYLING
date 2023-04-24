@@ -1,0 +1,46 @@
+%keyframe{
+@keyframes fade {
+    from{
+        opacity: .6;
+    }
+    to{
+        opacity: 1;
+    }
+}
+}
+
+%keyframeLeft{
+    @keyframes  slideInLeft {
+        from{
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+%keyframeRight{
+    @keyframes  slideInRight {
+        from{
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+%keyframeShow{
+    @keyframes show {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+}

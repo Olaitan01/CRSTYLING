@@ -1,0 +1,33 @@
+// $breakpoint:(
+// "xs":"max-width:575.98px",
+//  "sm":"max-width: 767.98px"
+
+// );
+
+
+
+
+
+// $my-map:map-get($breakpoints ,xs);
+// @debug (#{$my-map});
+
+
+// @mixin breakpoint($user-value){
+//     $my-map: map-get($breakpoints ,$user-value);
+//     @if $my-map{
+//         @media  (#{$my-map}) {
+//             @content;
+//         }
+//     }else{
+//         @error "opps, seems like the breakpoint #{$user-value} isn't defined"
+//     }
+// };
+
+
+
+
+
+//  SASS DEBUGGER
+//  @debug #{$my-map};
+
+

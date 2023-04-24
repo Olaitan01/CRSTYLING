@@ -1,0 +1,231 @@
+@use "../utilis/mixins" as *;
+@use "../shared/variables" as *;
+@use "../core/keyframe" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400&family=Kumbh+Sans:wght@400;700&family=Playfair+Display&family=Roboto:wght@300&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $fc__gold;
+  width: 100%;
+  font-family: "Playfair Display", serif;
+}
+.content-container {
+  padding: 12.5em 5em 2em;
+  width: 90%;
+  margin: auto;
+
+  
+  .content--wrapper {
+    @include flex;
+    flex-direction: row-reverse;
+    .content__model_img {
+      max-width: 100%;
+      width: 500px;
+      border-radius: 0.8em ;
+    }
+    .content__intro {
+      width: 40%;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 2em;
+    }
+  }
+  .content__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3rem;
+
+    &::after {
+      content: "";
+      border-bottom: 0.1em solid $fc__orange;
+      display: block;
+      width: 20%;
+      margin: auto;
+    }
+  }
+  .content__paragraph {
+    font-size: 2rem;
+    font-weight: 400;
+    word-spacing: 0.3em;
+    line-height: 1.5em;
+  }
+  .flex__show {
+    @include slideShow;
+    .flex__img {
+      flex: 1;
+      transition: flex 0.5s ease-in-out;
+      height: 100vh;
+      img {
+        @include slideShow__prop;
+      }
+    }
+  }
+  /*General Content services with flex*/
+  .content__services {
+    @include flex;
+    
+    font-size: 2rem;
+    padding: 0 2em 2em;
+
+    li {
+      list-style-type: none;
+      line-height: 2em;
+      font-weight: 400;
+      text-transform: uppercase;
+      &::before {
+        content: "";
+        width: 10px;
+        border-bottom: 0.1em solid black;
+        display: inline-block;
+        transform: translateY(-0.3em);
+      }
+      
+    }
+    /*Soocials Styling*/
+    .connect__to{
+      text-decoration: underline;
+      color: $fc__black;
+      transition: color .5s ease-in-out;
+      padding: 1em 0.5em;
+      white-space: nowrap;
+      font-weight: 600;
+
+      &:hover{
+        color: $fc__white;
+        cursor: pointer;
+      }
+      a{
+        color: $fc__black;
+        transition: color .5s ease-in-out;
+        &:hover{
+          color: $fc__white;
+        cursor: pointer;
+        }
+      }
+    }
+
+    /*SERVICES ANIMATION*/
+    .animated {
+      opacity: 0;
+    }
+    .slideInLeft {
+      @include slideInLeft;
+    }
+    .slideInRight {
+      @include slideInRight;
+    }
+    @extend %keyframeLeft;
+    @extend %keyframeRight;
+  }
+  @extend %keyframeShow;
+
+/*THE BRAND AND INTRO ANIMATION*/
+  .show{
+    @include show;
+  }
+  .animated {
+    opacity: 0;
+  }
+}
+.content-brand {
+  padding-top: 5em;
+}
+
+@media (width<35em)  {
+  .content-container{
+    width: 100%;
+    padding: 12.5em 1em 2em;
+    .content--wrapper{
+      flex-direction: column;
+      .content__model_img{
+        max-width:100% ;
+        padding-bottom: 1.5em;
+      }
+    .content__intro{
+      width: 100%;
+      font-size: 1.2rem;
+    }
+    }
+
+    .content__title{
+      &::after{
+        width: 60%;
+      }
+    }
+    .content__paragraph{
+      font-size: 1.5rem;
+    }
+
+    .content__services{
+      display: inline-block;
+      padding: 1.5em;
+      font-size: 1.5rem;
+      align-items: center;
+    
+      
+    }
+  .socials{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  }
+  .content-brand {
+  padding-top: 2em;
+}
+
+
+}
+
+/*Tablet Screen*/
+@media (width < 1250px) {
+  
+  .content-container{
+    width: 90%;
+    padding: 14em 1em 2em;
+    .content--wrapper{
+      flex-direction: column;
+      .content__model_img{
+        max-width:100% ;
+        padding-bottom: 1.5em;
+      }
+    .content__intro{
+      width: 100%;
+      font-size: 2rem;
+    }
+    }
+
+   
+    .content__paragraph{
+      font-size: 1.5rem;
+    }
+
+    .content__services{
+      padding: 1.5em;
+      font-size: 1.5rem;
+      align-items: center;
+      
+      
+    }
+  .socials{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  }
+  .content-brand {
+  padding-top: 2em;
+}
+
+
+}
