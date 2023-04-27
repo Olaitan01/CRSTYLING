@@ -1,7 +1,5 @@
 
-import("./script.js").then(module =>{
-  console.log(module)
-})
+
 
 /**General fade in/fade out and slide right and slide left element observer */
 const observer = new IntersectionObserver((entries) => {
@@ -36,7 +34,7 @@ function scrollFunction(){
     }
 }
 
-/**Stop loadin the flex function when not in view */
+/**Stop loading the images in the expandIndex function when not in view */
 
 const images=document.querySelectorAll("[data-src]");
 const config={
