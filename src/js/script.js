@@ -21,7 +21,7 @@ function showIndex(){
 let flexIndex=0;
 expandIndex()
 
-export  function expandIndex(){
+  function expandIndex(){
     let i;
     let flexSlide=document.getElementsByClassName("flex__img")
     for(let i=0;i<flexSlide.length;i++){
