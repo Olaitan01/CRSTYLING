@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400&family=Kumbh+Sans:wght@400;700&family=Playfair+Display&family=Roboto:wght@300&display=swap");
+header .header-top .nav-wrapper nav {
+  display: inline-flex;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+header {
+  position: relative;
+}
+header .header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: inherit;
+  transition: background-color 0.5s ease-in-out;
+  padding: 0 1.5em;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  margin: auto;
+  top: 0;
+}
+header .header-top .header-logo {
+  max-width: 100%;
+}
+header .header-top .nav-wrapper .burger__menu {
+  border: none;
+  background-color: inherit;
+  display: none;
+}
+header .header-top .nav-wrapper .burger__menu img {
+  max-width: 100%;
+}
+header .header-top .nav-wrapper .burger__menu .close-menu {
+  display: none;
+}
+header .header-top .nav-wrapper a {
+  padding-right: 2.5em;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.5s ease-in-out;
+}
+header .header-top .nav-wrapper a:hover {
+  text-decoration: line-through;
+  color: #1C1C1C;
+}
+header .header-hero {
+  width: 100%;
+  position: relative;
+  height: 80vh;
+}
+header .header-hero .hero__wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+header .header-hero .hero__img {
+  max-width: 1700px;
+  width: 100%;
+  display: none;
+}
+header .header-hero .fade {
+  animation: fade 0.5s;
+}
+
+@media (width < 35em) {
+  header .header-top .nav-wrapper .burger__menu {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    right: 1em;
+    top: 2.5em;
+  }
+  header .header-top .nav-wrapper nav {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    width: 100%;
+    height: 100vh;
+    padding: 1em 1.5em;
+    background-color: #B28228;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease-in-out;
+  }
+  header .header-top .nav-wrapper nav a {
+    padding: 2em;
+  }
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #B28228;
+  width: 100%;
+  font-family: "Playfair Display", serif;
+}
+
+.content-container {
+  padding: 12.5em 5em 2em;
+  width: 90%;
+  margin: auto;
+  /*General Content services with flex*/
+  /*THE BRAND AND INTRO ANIMATION*/
+}
+.content-container .content--wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.content-container .content--wrapper .content__model_img {
+  max-width: 100%;
+  width: 500px;
+  border-radius: 0.8em;
+}
+.content-container .content--wrapper .content__intro {
+  width: 40%;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 2em;
+}
+.content-container .content__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.content-container .content__title::after {
+  content: "";
+  border-bottom: 0.1em solid #FFB606;
+  display: block;
+  width: 20%;
+  margin: auto;
+}
+.content-container .content__paragraph {
+  font-size: 2rem;
+  font-weight: 400;
+  word-spacing: 0.3em;
+  line-height: 1.5em;
+}
+.content-container .flex__show {
+  display: flex;
+  gap: 0.2em;
+  width: 100%;
+}
+.content-container .flex__show .flex__img {
+  flex: 1;
+  transition: flex 0.5s ease-in-out;
+  height: 100vh;
+}
+.content-container .flex__show .flex__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5em;
+}
+.content-container .content__services {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  padding: 0 2em 2em;
+  /*Soocials Styling*/
+  /*SERVICES ANIMATION*/
+}
+.content-container .content__services li {
+  list-style-type: none;
+  line-height: 2em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.content-container .content__services li::before {
+  content: "";
+  width: 10px;
+  border-bottom: 0.1em solid black;
+  display: inline-block;
+  transform: translateY(-0.3em);
+}
+.content-container .content__services .connect__to {
+  text-decoration: underline;
+  color: #1C1C1C;
+  transition: color 0.5s ease-in-out;
+  padding: 1em 0.5em;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.content-container .content__services .connect__to:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+.content-container .content__services .connect__to a {
+  color: #1C1C1C;
+  transition: color 0.5s ease-in-out;
+}
+.content-container .content__services .connect__to a:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+.content-container .content__services .animated {
+  opacity: 0;
+}
+.content-container .content__services .slideInLeft {
+  animation: slideInLeft 1s forwards;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.content-container .content__services .slideInRight {
+  animation: slideInRight 1s forwards;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.content-container .show {
+  animation: show 1s forwards;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.content-container .animated {
+  opacity: 0;
+}
+
+.content-brand {
+  padding-top: 5em;
+}
+
+@media (width < 35em) {
+  .content-container {
+    width: 100%;
+    padding: 12.5em 1em 2em;
+  }
+  .content-container .content--wrapper {
+    flex-direction: column;
+  }
+  .content-container .content--wrapper .content__model_img {
+    max-width: 100%;
+    padding-bottom: 1.5em;
+  }
+  .content-container .content--wrapper .content__intro {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  .content-container .content__title::after {
+    width: 60%;
+  }
+  .content-container .content__paragraph {
+    font-size: 1.5rem;
+  }
+  .content-container .content__services {
+    display: inline-block;
+    padding: 1.5em;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+  .content-container .socials {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-brand {
+    padding-top: 2em;
+  }
+}
+/*Tablet Screen*/
+@media (width < 1250px) {
+  .content-container {
+    width: 90%;
+    padding: 14em 1em 2em;
+  }
+  .content-container .content--wrapper {
+    flex-direction: column;
+  }
+  .content-container .content--wrapper .content__model_img {
+    max-width: 100%;
+    padding-bottom: 1.5em;
+  }
+  .content-container .content--wrapper .content__intro {
+    width: 100%;
+    font-size: 2rem;
+  }
+  .content-container .content__paragraph {
+    font-size: 1.5rem;
+  }
+  .content-container .content__services {
+    padding: 1.5em;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+  .content-container .socials {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-brand {
+    padding-top: 2em;
+  }
+}
+footer {
+  background-color: #1C1C1C;
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2em 2em;
+  align-items: flex-start;
+}
+footer .logo {
+  width: 100%;
+}
+footer h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  text-decoration: underline;
+  line-height: 3em;
+}
+footer li {
+  list-style-type: none;
+}
+footer li:hover {
+  color: #B28228;
+  cursor: pointer;
+}
+footer .footer-connect {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-connect a {
+  color: #ffffff;
+  text-decoration: none;
+}
+footer .footer-connect a:hover {
+  color: #B28228;
+}
+
+@media (width < 35em) {
+  footer {
+    flex-direction: column;
+    margin: auto;
+  }
+}/*# sourceMappingURL=style.css.map */
