@@ -115,9 +115,9 @@ body {
     }
 
     /*SERVICES ANIMATION*/
-    .animated {
-      opacity: 0;
-    }
+    // .animated {
+    //   opacity: 0;
+    // }
     .slideInLeft {
       @include slideInLeft;
     }
@@ -133,9 +133,9 @@ body {
   .show{
     @include show;
   }
-  .animated {
-    opacity: 0;
-  }
+  // .animated {
+  //   opacity: 0;
+  // }
 }
 .content-brand {
   padding-top: 5em;
